@@ -1,6 +1,7 @@
 # GeoResistR
 
-**GeoResistR** is an R package designed to analyze antibiotic resistance gene dynamics over time and across geographic locations. It provides tools for loading and processing resistome data, conducting temporal and spatial analyses, and generating visualizations to help researchers understand trends and patterns in antibiotic resistance.
+**GeoResistR** is a lightweight R package designed to analyze antibiotic resistance gene dynamics over time and across geographic locations. It provides essential tools for loading and processing resistome data, conducting temporal and spatial analyses, and generating visualizations to help researchers understand trends and patterns in antibiotic resistance.
+
 ## Input Data Format
 
 The **GeoResistR** package requires input data in the form of a CSV file with a specific structure. The table should include the following columns:
