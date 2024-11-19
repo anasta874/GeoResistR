@@ -86,6 +86,3 @@ The main components of the package are organized as follows:
   - `expanded_synthetic_resistome_data.csv`: Synthetic data with multiple genes.
   - `synthetic_resistome_data_with_trend.csv`: Synthetic data with added trend and seasonality.
 
-## License
-
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
