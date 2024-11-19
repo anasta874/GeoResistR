@@ -1,0 +1,17 @@
+Package: GeoResistR
+Title: Analysis of Antibiotic Resistance Genes Over Time and Space
+Version: 0.1.0
+Authors@R: person("Anastasia", "Pluzerova", email = "anasta874@gmail.com", role = c("aut", "cre"))
+Description: This package provides tools to analyze and visualize the dynamics of antibiotic resistance genes over time and across different locations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Depends: R (>= 4.0.0)
+Imports:
+  dplyr,
+  ggplot2,
+  sf,
+  lubridate,
+  forecast,
+  tidyr
