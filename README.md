@@ -1,6 +1,34 @@
 # GeoResistR
 
 **GeoResistR** is an R package designed to analyze antibiotic resistance gene dynamics over time and across geographic locations. It provides tools for loading and processing resistome data, conducting temporal and spatial analyses, and generating visualizations to help researchers understand trends and patterns in antibiotic resistance.
+## Input Data Format
+
+The **GeoResistR** package requires input data in the form of a CSV file with a specific structure. The table should include the following columns:
+
+- **gene_id**: (Character) The identifier of the antibiotic resistance gene, e.g., "blaCTX-M-15".
+- **sample_id**: (Character) A unique identifier for each sample, e.g., "S001".
+- **abundance**: (Numeric) The measured abundance level of the gene in the sample, represented as a numeric value.
+- **date**: (Date) The date the sample was collected, in the format `YYYY-MM-DD`, e.g., "2023-07-10".
+- **latitude**: (Numeric) The latitude of the sampling location, e.g., `41.29554`.
+- **longitude**: (Numeric) The longitude of the sampling location, e.g., `-121.91890`.
+
+### Example Table
+
+| gene_id    | sample_id | abundance | date       | latitude | longitude |
+|------------|-----------|-----------|------------|----------|-----------|
+| blaCTX-M-15 | S001      | 14.0      | 2023-07-10 | 41.29554 | -121.91890 |
+| ermC       | S002      | 12.5      | 2023-12-09 | 53.62438 | -81.10948  |
+| blaNDM     | S003      | 8.1       | 2023-03-17 | 47.56747 | -88.55673  |
+| poxtA      | S004      | 27.9      | 2023-10-18 | 34.45181 | -116.17952 |
+| cfr        | S005      | 24.5      | 2023-06-06 | 51.37709 | -121.81001 |
+
+### Important Notes
+
+- Ensure that the **date** column is in the correct date format (`YYYY-MM-DD`).
+- **gene_id** and **sample_id** should be unique identifiers and are required for proper data analysis.
+- Missing or misformatted data in any of these columns may cause errors or unexpected behavior in the analysis functions.
+
+Make sure to format your data according to this structure to ensure compatibility with the **GeoResistR** functions.
 
 ## Features
 
