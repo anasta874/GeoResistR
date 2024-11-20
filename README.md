@@ -1,4 +1,4 @@
-*This project is currently under development and is not ready for production use.
+⚠️ This project is currently under development and is not ready for production use.
 
 # GeoResistR
 
