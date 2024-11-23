@@ -26,6 +26,14 @@ jobs:
           sudo apt-get install -y libxml2-dev libssl-dev libcurl4-openssl-dev \
                                   libgdal-dev libgeos-dev libproj-dev
 
+      - name: Install sf package
+        run: |
+          Rscript -e 'install.packages("sf")'
+
+      - name: Install rnaturalearth
+        run: |
+          Rscript -e 'install.packages("rnaturalearth")'
+
       - name: Install R package dependencies
         run: |
           Rscript -e 'install.packages("remotes")'
