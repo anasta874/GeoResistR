@@ -29,11 +29,15 @@ jobs:
         run: |
           Rscript -e 'install.packages("remotes")'
           Rscript -e 'remotes::install_deps(dependencies = TRUE)'
-          Rscript -e 'sessionInfo()'
 
-      - name: Run tests (optional)
+      - name: Install current package
+        run: |
+          R CMD INSTALL .
+
+      - name: Run tests
         run: |
           Rscript -e 'if (requireNamespace("testthat", quietly = TRUE)) testthat::test_dir("tests")'
 
       - name: Check R package
-        run: R CMD check . --no-manual --as-cran
+        run: |
+          R CMD check . --no-manual --as-cran
