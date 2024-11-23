@@ -2,7 +2,8 @@ library(testthat)
 library(GeoResistR)
 
 # Load the provided dataset
-test_data <- load("./synthetic_resistome_data_3_years_trend.csv")
+test_data <- load(system.file("extdata", "synthetic_resistome_data_3_years_trend.csv", package = "GeoResistR"))
+
 
 # Test 1: load() function
 test_that("load() correctly loads and validates data", {
