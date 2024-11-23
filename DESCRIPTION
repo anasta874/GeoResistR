@@ -2,6 +2,8 @@ Package: GeoResistR
 Title: Analysis and Visualization of Antibiotic Resistance Gene Dynamics
 Version: 0.1.2
 Authors@R: person("Anastasia", "Poluzerova", email = "anasta874@gmail.com", role = c("aut", "cre"))
+Author: Anastasia Poluzerova [aut, cre]
+Maintainer: Anastasia Poluzerova <anasta874@gmail.com>
 Description: This package provides tools for analyzing and visualizing antibiotic resistance gene data. Features include temporal trend analysis, spatial visualization with GIS tools, and support for dynamic data interpretation.
 License: MIT + file LICENSE
 Encoding: UTF-8
