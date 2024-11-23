@@ -1,7 +1,3 @@
-
-## ⚠️ Disclaimer:
-This project is currently under development and is not ready for production use.
-
 # GeoResistR
 
 **GeoResistR** is an R package designed to analyze antibiotic resistance gene dynamics over time and across geographic locations. The package provides tools for loading data, temporal analysis, ARIMA-based forecasting, and geospatial visualization.
