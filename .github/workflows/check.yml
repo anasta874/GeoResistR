@@ -21,12 +21,19 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          sudo apt-get install -y libxml2-dev libssl-dev libcurl4-openssl-dev
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libssl-dev libcurl4-openssl-dev \
+                                  libgdal-dev libgeos-dev libproj-dev
 
       - name: Install R package dependencies
         run: |
           Rscript -e 'install.packages("remotes")'
           Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+          Rscript -e 'sessionInfo()'
+
+      - name: Run tests (optional)
+        run: |
+          Rscript -e 'if (requireNamespace("testthat", quietly = TRUE)) testthat::test_dir("tests")'
 
       - name: Check R package
         run: R CMD check . --no-manual --as-cran
