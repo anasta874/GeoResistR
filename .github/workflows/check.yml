@@ -21,9 +21,12 @@ jobs:
 
       - name: Install system dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
           sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get update
           sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev \
+                                  gdal-bin proj-bin libgdal26 libgeos-3.9.0 libproj15 \
                                   libxml2-dev libssl-dev libcurl4-openssl-dev
 
       - name: Check system library versions
@@ -34,19 +37,11 @@ jobs:
 
       - name: Install sf package
         run: |
-          Rscript -e 'install.packages("sf", configure.args = "--with-gdal-config=/usr/bin/gdal-config --with-geos-config=/usr/bin/geos-config --with-proj-lib=/usr/lib/")'
+          Rscript -e 'install.packages("sf")'
 
       - name: Verify sf installation
         run: |
           Rscript -e 'if (!requireNamespace("sf", quietly = TRUE)) stop("sf not installed correctly")'
-
-      - name: Install rnaturalearth package
-        run: |
-          Rscript -e 'install.packages("rnaturalearth")'
-
-      - name: Verify rnaturalearth installation
-        run: |
-          Rscript -e 'if (!requireNamespace("rnaturalearth", quietly = TRUE)) stop("rnaturalearth not installed correctly")'
 
       - name: Install R package dependencies
         run: |
