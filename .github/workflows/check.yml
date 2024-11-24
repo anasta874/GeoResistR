@@ -26,9 +26,15 @@ jobs:
           sudo apt-get install -y libgdal-dev libgeos-dev libproj-dev \
                                   libxml2-dev libssl-dev libcurl4-openssl-dev
 
+      - name: Check system library versions
+        run: |
+          gdalinfo --version || echo "GDAL not installed"
+          geos-config --version || echo "GEOS not installed"
+          proj --version || echo "PROJ not installed"
+
       - name: Install sf package
         run: |
-          Rscript -e 'install.packages("sf")'
+          Rscript -e 'install.packages("sf", configure.args = "--with-gdal-config=/usr/bin/gdal-config --with-geos-config=/usr/bin/geos-config --with-proj-lib=/usr/lib/")'
 
       - name: Verify sf installation
         run: |
